@@ -11,12 +11,12 @@
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><a class="wordmark" href="https://ingleby.com/">ingleby<span>.com</span></a>
 <nav class="site-nav" aria-label="Purser"><a href="/">Purser</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></nav></header>
-<div class="page"><main id="main" class="stack" style="gap:18px;max-width:66ch"><p class="sub">Privacy policy</p><h1>What Purser keeps, and why.</h1><p class="lede">Effective 4 October 2026. Purser Money is a money app made by Erick Ingleby.</p>
+<div class="page"><main id="main" class="stack" style="gap:18px;max-width:66ch"><p class="sub">Privacy policy</p><h1>What Purser keeps, and why.</h1><p class="lede">Effective 4 October 2026. Purser Money is a money app made by Erick Ingleby. It is in private preview, shared for now with invited households, with wider availability planned for later.</p><p class="sub">Last updated: 13 October 2026</p>
     <h2>What Purser collects</h2>
     <ul>
       <li>Bank, card and loan balances and transactions, supplied through a bank aggregation service that each person connects and authorises themselves.</li>
       <li>With Apple's FinanceKit, and only after the person grants permission on their own iPhone, Apple Card and Apple Cash transactions and balances from that device.</li>
-      <li>Sign-in identity through Sign in with Apple: a stable identifier and, if the person chooses to share them, a name and email address. Access is by invitation through Sign in with Apple.</li>
+      <li>Sign-in identity through Sign in with Apple: a stable identifier and, if the person chooses to share them, a name and email address. Access is by invitation through Sign in with Apple during the private preview.</li>
       <li>Credit report files a person chooses to add, read only for scores, factors, inquiries and account lines.</li>
     </ul>
 
@@ -24,22 +24,36 @@
     <p>Data is used solely to show each person their own finances: balances, spending, recurring payments, upcoming bills, credit health and savings suggestions. Nothing is used for advertising, profiling, scoring, resale or training.</p>
 
     <h2>Where it lives</h2>
-    <p>Data is stored in a cloud account that Ingleby operates, in the United States, encrypted at rest and in transit. A copy is kept on each person's own device so the app works offline. Apart from the advisor described below, no third party receives the data. The app contains no analytics or tracking libraries.</p>
-
+    <p>Data is stored in a cloud account that Ingleby operates, in the United States, encrypted at rest and in transit. A copy is kept on each person's own device so the app works offline. Purser does not sell or share the data. The only outside services that handle it are the ones listed under "Services Purser uses" below. The app contains no analytics, advertising or tracking libraries, and no payments.</p>
+    <h2>Services Purser uses</h2>
+    <ul>
+      <li><strong>Sign in with Apple</strong> proves who you are. Purser checks Apple's identity token, and only invited people can get in. There is no open sign-up during the private preview.</li>
+      <li><strong>SimpleFIN Bridge</strong> (simplefin.org) is how a person shares read-only bank and card balances and transactions. The Purser server reads from it, never the app.</li>
+      <li><strong>Apple FinanceKit</strong> lets Purser read a person's own Apple Card balance and transactions. It is read on that person's iPhone, only after they give permission, and can be withdrawn in Settings on the iPhone.</li>
+      <li><strong>Credit report files</strong> are added only by the person, who imports their own report file into the app. The Purser server reads the file for that one request and keeps only the bureau, the score, the date and a short summary. To pull out the score and factors, the text of the report is sent to Anthropic's Claude (below).</li>
+      <li><strong>Amazon Web Services, US East region</strong> hosts the Purser server and stores the data.</li>
+      <li><strong>Anthropic's Claude</strong> powers Penny, the advisor, and reads the text of a credit report file when a person imports one. For Penny, a question and a short summary of that person's own figures are sent (balances, spending totals and upcoming bills, rounded to the dollar, with no account numbers and no Apple identifiers). Anthropic processes it only to answer, under terms that do not allow it to train models on the data. Nothing is sent unless someone asks Penny something or imports a credit report file.</li>
+      <li><strong>Apple's Vision framework</strong> reads the text in a screenshot you choose to share to Purser. This happens on your device.</li>
+    </ul>
     <h2>FinanceKit data</h2>
     <p>Apple Card and Apple Cash data read through FinanceKit goes only from the person's iPhone to Purser's own service, and is never shared with anyone else. Access can be withdrawn at any time in Settings on the iPhone, after which Purser stops receiving it and the stored copy can be deleted on request.</p>
-
-    <h2>Penny, the advisor</h2>
-    <p>When a person asks Penny a question, the question and a short summary of that person's own figures (balances, spending totals, upcoming bills, rounded to the dollar, with no account numbers) are sent to Anthropic's Claude service to write the answer. Anthropic processes it only to answer that question, under terms that do not allow it to train models on the data. Nothing is sent unless someone asks Penny something.</p>
 
     <h2>Money never moves</h2>
     <p>Purser cannot pay, transfer, or move funds. It reads and advises. Every payment stays in the bank's own app.</p>
 
-    <h2>Deletion</h2>
-    <p>Anyone who uses Purser can ask for their data to be deleted, and it will be removed from the service and from the devices. Write to <a href="/cdn-cgi/l/email-protection#c9acbba0aaa289a0a7aea5acabb0e7aaa6a4"><span class="__cf_email__" data-cfemail="5431263d373f143d3a333831362d7a373b39">[email&#160;protected]</span></a>.</p>
+    <h2 id="deleting-your-account">Deleting your account</h2>
+    <p>You can delete your account yourself, in the app: open Settings, then Delete account.</p>
+    <ul>
+      <li>Purser asks you to confirm with Sign in with Apple again.</li>
+      <li>Purser revokes its Sign in with Apple access, so it no longer appears as an app you signed in to with Apple.</li>
+      <li>Your data on Purser's server is permanently deleted.</li>
+      <li>If you are the last member of the household, the whole household's data is deleted too, and so is the link to the bank feed. The stored SimpleFIN access is scheduled for deletion and is gone within 7 days.</li>
+    </ul>
+    <p>The demo household used for App Review has no personal account. There, Delete account only ends the demo session on the device.</p>
+    <p>You can also ask by email instead. Write to <a href="mailto:erick@ingleby.com">erick@ingleby.com</a> and your data will be removed from the service and from the devices.</p>
 
     <h2>Changes</h2>
     <p>This policy changes only when Purser changes what it collects. The effective date above is updated when it does.</p>
   </main></div>
 <footer class="site-footer"><p>Purser Money is made by Erick Ingleby in San Juan, Puerto Rico.</p>
-<nav aria-label="Purser"><a href="/">Purser</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="https://ingleby.com/">ingleby.com</a></nav></footer><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4a0b8500c6bdfbc',t:'MTc5MTkxOTQxOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+<nav aria-label="Purser"><a href="/">Purser</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="https://ingleby.com/">ingleby.com</a></nav></footer></body></html>

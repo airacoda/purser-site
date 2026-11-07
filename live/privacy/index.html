@@ -11,11 +11,11 @@
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><a class="wordmark" href="https://ingleby.com/">ingleby<span>.com</span></a>
 <nav class="site-nav" aria-label="Purser"><a href="/">Purser</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></nav></header>
-<div class="page"><main id="main" class="stack" style="gap:18px;max-width:66ch"><p class="sub">Privacy policy</p><h1>What Purser keeps, and why.</h1><p class="lede">Effective 4 October 2026. Purser Money is a money app made by Erick Ingleby. It is in private preview, shared for now with invited households, with wider availability planned for later.</p><p class="sub">Last updated: 13 October 2026</p>
+<div class="page"><main id="main" class="stack" style="gap:18px;max-width:66ch"><p class="sub">Privacy policy</p><h1>What Purser keeps, and why.</h1><p class="lede">Effective 4 October 2026. Purser Money is a money app made by Erick Ingleby. It is in private preview, shared for now with invited households, with wider availability planned for later.</p><p class="sub">Last updated: 7 November 2026</p>
     <h2>What Purser collects</h2>
     <ul>
       <li>Bank, card and loan balances and transactions, supplied through a bank aggregation service that each person connects and authorises themselves.</li>
-      <li>With Apple's FinanceKit, and only after the person grants permission on their own iPhone, Apple Card and Apple Cash transactions and balances from that device.</li>
+      <li>With Apple's FinanceKit, and only after the person grants permission on their own iPhone, the person's own Apple Card balance and transactions from that device. Apple Cash and Savings are not read.</li>
       <li>Sign-in identity through Sign in with Apple: a stable identifier and, if the person chooses to share them, a name and email address. Access is by invitation through Sign in with Apple during the private preview.</li>
       <li>Credit report files a person chooses to add, read only for scores, factors, inquiries and account lines.</li>
     </ul>
@@ -29,14 +29,14 @@
     <ul>
       <li><strong>Sign in with Apple</strong> proves who you are. Purser checks Apple's identity token, and only invited people can get in. There is no open sign-up during the private preview.</li>
       <li><strong>SimpleFIN Bridge</strong> (simplefin.org) is how a person shares read-only bank and card balances and transactions. The Purser server reads from it, never the app.</li>
-      <li><strong>Apple FinanceKit</strong> lets Purser read a person's own Apple Card balance and transactions. It is read on that person's iPhone, only after they give permission, and can be withdrawn in Settings on the iPhone. Purser is being enabled for this now; it is not active yet.</li>
+      <li><strong>Apple FinanceKit</strong> lets Purser read a person's own Apple Card balance and transactions. It is read on that person's iPhone, only after they give permission, and can be withdrawn in Settings on the iPhone. This is active in the iPhone app.</li>
       <li><strong>Credit report files</strong> are added only by the person, who imports their own report file into the app. The Purser server reads the file in memory for that one request and keeps only the bureau, the score, its date, a short summary and a few counts (open and closed accounts, negative items, inquiries). To pull those out, the text of the report is sent to Anthropic's Claude (below). The file and its text are not stored.</li>
       <li><strong>Amazon Web Services, US East region</strong> hosts the Purser server and stores the data.</li>
       <li><strong>Anthropic's Claude</strong> powers Penny, the advisor, and reads the text of a credit report file when a person imports one. For Penny, a question and a short summary of that person's own figures are sent (balances, spending totals and upcoming bills, rounded to the dollar, with no account numbers and no Apple identifiers). Anthropic processes it only to answer, under terms that do not allow it to train models on the data. Nothing is sent unless someone asks Penny something or imports a credit report file.</li>
       <li><strong>Apple's Vision framework</strong> reads the text in a screenshot you choose to share to Purser. This happens on your device.</li>
     </ul>
     <h2>FinanceKit data</h2>
-    <p>Apple Card and Apple Cash data read through FinanceKit goes only from the person's iPhone to Purser's own service, and is never shared with anyone else. Access can be withdrawn at any time in Settings on the iPhone, after which Purser stops receiving it and the stored copy can be deleted on request.</p>
+    <p>Apple Card data read through FinanceKit (the balance and transactions of the person's own Apple Card, not Apple Cash or Savings) goes only from the person's iPhone to Purser's own service, for that person's household only, and is never shared with anyone else. Access can be withdrawn at any time in Settings on the iPhone, after which Purser stops receiving it. The stored copy is deleted when the person deletes their account, or on request.</p>
 
     <h2>Money never moves</h2>
     <p>Purser cannot pay, transfer, or move funds. It reads and advises. Every payment stays in the bank's own app.</p>
@@ -46,7 +46,7 @@
     <ul>
       <li>Purser asks you to confirm with Sign in with Apple again.</li>
       <li>Purser revokes its Sign in with Apple access, so it no longer appears as an app you signed in to with Apple.</li>
-      <li>Your data on Purser's server is permanently deleted.</li>
+      <li>Your data on Purser's server is permanently deleted, including your Apple Card balance and transactions.</li>
       <li>If you are the last member of the household, the whole household's data is deleted too, and so is the link to the bank feed. The stored SimpleFIN access is scheduled for deletion and is gone within 7 days.</li>
     </ul>
     <p>The demo household used for App Review has no personal account. There, Delete account only ends the demo session on the device.</p>
